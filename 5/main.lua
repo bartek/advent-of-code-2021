@@ -67,7 +67,7 @@ local function print_grid(t)
 end
 
 
--- line_from_points collects all the points that make a line (horizontal, vertical, or diagnonal)
+-- line_from_points collects all the points that make a line (horizontal, vertical, or diagonal)
 -- between the provided points
 -- returns a table in the form: t = {{x1, y1}, {x2, y2}, {x3, y3}, ...}
 local function line_from_points(x1, y1, x2, y2)
@@ -93,7 +93,7 @@ local function line_from_points(x1, y1, x2, y2)
         for i = 1, dist - 1 do
             table.insert(t, {x1 + i, y1})
         end
-    -- y1 is gong up towards y2
+    -- y1 is going up towards y2
     elseif direction[2] == -1 then
         for i = 1, dist - 1 do
             table.insert(t, {x1, y1 + i})
