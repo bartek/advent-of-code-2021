@@ -1,0 +1,31 @@
+package.path = package.path .. ";../?.lua"
+
+local file = require("lib.file")
+
+local c = file.read("sample.txt")
+
+local function median(t)
+    table.sort(t, function(a, b) return (a > b) end)
+
+    local middle = #t / 2
+    if #t%2 == 0 then
+        return (t[middle - 1] + t[middle]) / 2
+    else
+        return t[middle]
+end
+
+local function part1()
+    local input = file.read("sample.txt")
+    local t = {}
+    for c in string.gmatch(input, "%d+") do
+        t[#1 + 1] = tonumber(t)
+    end
+
+    local pos = median(t)
+    local cost = fuel_cost(t, pos)
+
+    print(cost)
+    assert(cost == 5)
+end
+
+part1()
