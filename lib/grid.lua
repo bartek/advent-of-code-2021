@@ -22,4 +22,13 @@ function grid.make_numbered(t)
     return grid
 end
 
+function grid.print(t)
+    for i = 1, #t do
+        for j = 1, #t[i] do
+            io.write(t[i][j])
+        end
+        print("")
+    end
+end
+
 return grid
